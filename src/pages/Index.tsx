@@ -1,21 +1,27 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { PromptGenerator } from "@/components/PromptGenerator";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5">
-      <div className="container mx-auto p-6">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-primary/10 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-secondary/10 rounded-full filter blur-3xl animate-pulse"></div>
+      </div>
+
+      <div className="container mx-auto p-6 relative z-10">
         <header className="text-center mb-12">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent mb-4">
-            ASI - Kurs Nord NAVIGATOR
+          <h1 className="font-orbitron text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wider text-foreground mb-4">
+            ASI - KURS NORD NAVIGATOR
           </h1>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-accent-foreground">
             Multidimensionale Kognition • Systemische Navigation
           </p>
         </header>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {/* Prompt Versionen */}
-          <div className="bg-card border rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
+          <div className="bg-card border border-border rounded-xl p-6 shadow-lg hover:shadow-xl transition-all backdrop-blur-sm">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
               Prompt Versionen
@@ -37,7 +43,7 @@ const Index = () => {
           </div>
 
           {/* Prinzipien Dashboard */}
-          <div className="bg-card border rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
+          <div className="bg-card border border-border rounded-xl p-6 shadow-lg hover:shadow-xl transition-all backdrop-blur-sm">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
               <span className="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
               Operative Prinzipien
@@ -61,7 +67,7 @@ const Index = () => {
           </div>
 
           {/* Systemstatus */}
-          <div className="bg-card border rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
+          <div className="bg-card border border-border rounded-xl p-6 shadow-lg hover:shadow-xl transition-all backdrop-blur-sm">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
               Systemstatus
@@ -77,7 +83,7 @@ const Index = () => {
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-sm">Intentionalität</span>
-                <span className="text-blue-500 font-semibold">DEKODIERT</span>
+                <span className="text-primary font-semibold">DEKODIERT</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-sm">Selbstkorrektur</span>
@@ -87,12 +93,24 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Prompt Generator Sektion */}
-        <div className="mt-12 bg-card border rounded-xl p-8 shadow-lg">
-          <h2 className="text-3xl font-semibold mb-6 text-center">Prompt Generator</h2>
+        {/* Interactive Prompt Generator */}
+        <div className="space-y-8">
+          <div className="text-center">
+            <h2 className="font-orbitron text-3xl font-semibold mb-4">Interaktiver Prompt Generator</h2>
+            <p className="text-lg text-muted-foreground">
+              Erstellen Sie maßgeschneiderte ASI-Prompts für optimale kognitive Navigation
+            </p>
+          </div>
+          
+          <PromptGenerator />
+        </div>
+
+        {/* Info Section */}
+        <div className="mt-12 bg-card border border-border rounded-xl p-8 shadow-lg backdrop-blur-sm">
+          <h2 className="text-3xl font-semibold mb-6 text-center">Warum dieser Prompt funktioniert</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">Warum dieser Prompt funktioniert:</h3>
+              <h3 className="text-lg font-semibold mb-4">Technische Prinzipien:</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></span>
@@ -108,20 +126,20 @@ const Index = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                  <span><strong>Rollendefition:</strong> KI als kognitiver Partner, nicht passiver Befehlsempfänger</span>
+                  <span><strong>Rollendefinition:</strong> KI als kognitiver Partner, nicht passiver Befehlsempfänger</span>
                 </li>
               </ul>
             </div>
             <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg p-6">
               <h3 className="text-lg font-semibold mb-4 text-center">System aktivieren</h3>
               <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-lg">ASI</span>
+                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center shadow-lg shadow-primary/20">
+                  <span className="text-primary-foreground font-orbitron font-bold text-lg">ASI</span>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">
                   Bereit für multidimensionale kognitive Navigation
                 </p>
-                <div className="text-xs font-mono bg-background/50 rounded p-2 border">
+                <div className="text-xs font-mono bg-background/50 rounded p-2 border border-border">
                   "Kurs Nord verstanden und aktiviert."
                 </div>
               </div>
